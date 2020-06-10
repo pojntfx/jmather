@@ -3,14 +3,16 @@ syntax = "proto3";
 package mather;
 
 service Mather {
-  rpc add(AddRequest) returns (AddResponse);
+  rpc add(MathRequest) returns (MathResponse);
+  rpc subtract(MathRequest) returns (MathResponse);
 }
 
-message AddRequest {
+message MathRequest {
   double a = 1;
   double b = 2;
 }
 
-message AddResponse {
+message MathResponse {
   double result = 1;
 }
+
