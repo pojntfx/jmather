@@ -19,4 +19,11 @@ class MatherCoreImplTest {
 
         assertEquals(3, res);
     }
+
+    @Test
+    void subtract() {
+        double res = this.matherCore.subtract(1, 2);
+
+        assertEquals(-1, res);
+    }
 }
