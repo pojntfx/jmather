@@ -26,4 +26,11 @@ class MatherCoreImplTest {
 
         assertEquals(-1, res);
     }
+
+    @Test
+    void subtractAnotherNumber() {
+        double res = this.matherCore.subtract(2, 2);
+
+        assertEquals(0, res);
+    }
 }
