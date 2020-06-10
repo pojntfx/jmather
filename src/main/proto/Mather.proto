@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package mather;
+
+service Mather {
+  rpc add(AddRequest) returns (AddResponse);
+}
+
+message AddRequest {
+  double a = 1;
+  double b = 2;
+}
+
+message AddResponse {
+  double result = 1;
+}
