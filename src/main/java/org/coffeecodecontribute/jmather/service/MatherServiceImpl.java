@@ -13,19 +13,19 @@ public class MatherServiceImpl extends MatherGrpc.MatherImplBase implements Math
     }
 
     @Override
-    public void add(MatherOuterClass.AddRequest request, StreamObserver<MatherOuterClass.AddResponse> responseObserver) {
+    public void add(MatherOuterClass.MathRequest request, StreamObserver<MatherOuterClass.MathResponse> responseObserver) {
         double res = this.matherCore.add(request.getA(), request.getB());
 
-        responseObserver.onNext(MatherOuterClass.AddResponse.newBuilder().setResult(res).build());
+        responseObserver.onNext(MatherOuterClass.MathResponse.newBuilder().setResult(res).build());
 
         responseObserver.onCompleted();
     }
 
     @Override
-    public void subtract(MatherOuterClass.SubtractRequest request, StreamObserver<MatherOuterClass.SubtractResponse> responseObserver) {
+    public void subtract(MatherOuterClass.MathRequest request, StreamObserver<MatherOuterClass.MathResponse> responseObserver) {
         double res = this.matherCore.subtract(request.getA(), request.getB());
 
-        responseObserver.onNext(MatherOuterClass.SubtractResponse.newBuilder().setResult(res).build());
+        responseObserver.onNext(MatherOuterClass.MathResponse.newBuilder().setResult(res).build());
 
         responseObserver.onCompleted();
     }
