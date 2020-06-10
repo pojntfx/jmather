@@ -20,4 +20,13 @@ public class MatherServiceImpl extends MatherGrpc.MatherImplBase implements Math
 
         responseObserver.onCompleted();
     }
+
+    @Override
+    public void subtract(MatherOuterClass.SubtractRequest request, StreamObserver<MatherOuterClass.SubtractResponse> responseObserver) {
+        double res = this.matherCore.subtract(request.getA(), request.getB());
+
+        responseObserver.onNext(MatherOuterClass.SubtractResponse.newBuilder().setResult(res).build());
+
+        responseObserver.onCompleted();
+    }
 }
